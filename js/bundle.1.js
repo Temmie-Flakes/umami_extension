@@ -1568,8 +1568,8 @@ var Util;
             // UtilHTML.testIfCustomPaginateExists();
             UtilHTML.prevLink = UtilHTML.getPrevLink();
             UtilHTML.nextLink = UtilHTML.getNextLink();
-            $("<link>").attr("href", browser.extension.getURL("css/umami.css")).attr("rel", "stylesheet").addClass("WG-reload-remove").appendTo("head");
-            $("<link>").attr("href", browser.extension.getURL("css/bootstrap.min.css")).attr("rel", "stylesheet").addClass("WG-reload-remove").appendTo("head");
+            $("<link>").attr("href", browser.runtime.getURL("css/umami.css")).attr("rel", "stylesheet").addClass("WG-reload-remove").appendTo("head");
+            $("<link>").attr("href", browser.runtime.getURL("css/bootstrap.min.css")).attr("rel", "stylesheet").addClass("WG-reload-remove").appendTo("head");
             return Promise.resolve();
         },
         bind: () => {
@@ -3985,8 +3985,8 @@ var Share;
         $(".WG-reload-remove").remove();
         initMods([Config]).then(() => {
             initMods([Util, Keys, Debug, User, Save, Posts, Pools, Version, Thumbs, SlideShow, Page, Share, Trans, PageScript, BrowserMessage]).then(() => {
-                var htmlURL = browser.extension.getURL("html/content.html");
-                var scriptURL = browser.extension.getURL("pagejs/umami-coms.js");
+                var htmlURL = browser.runtime.getURL("html/content.html");
+                var scriptURL = browser.runtime.getURL("pagejs/umami-coms.js");
                 $("head").append($("<script>").addClass("WG-reload-remove").attr("src", scriptURL));
                 overlay = $("<div>").attr("id", "WG-PRN").addClass("WG-reload-remove").appendTo("body").load(htmlURL, function (data) {
                     htmlInitMods([Config, Version, Util, User, Thumbs, SlideShow, Save, Keys]).then(() => {
