@@ -294,13 +294,13 @@
 				  -1px -1px 0 #152f56;
 }
 
-article.post-preview {
+article.thumbnail {
     border: 2px solid #00000000;
     /* height: 191px;
     width: 176px; */
 }
 
-article.post-preview.WG-selected {
+article.thumbnail.WG-selected {
     border-color: red;
 }
 

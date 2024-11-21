@@ -2566,7 +2566,7 @@ var DefaultConfig = {};
 })();
 var Thumbs;
 (function() {
-    const cssThumb = "article.post-preview";
+    const cssThumb = "article.thumbnail";
     const cssBlacklisted = ".blacklisted-active,.blacklisted";
     const cssThumbNotBlacklisted = cssThumb + ":not(" + cssBlacklisted + ")";
     Thumbs = {
@@ -2849,7 +2849,7 @@ var SlideShow;
             if (SlideShow.modalOpen()) {
                 SlideShow.next();
                 SlideShow.scheduleSlide(
-                    SlideShow.timeoutOverride != null ? slideTimeOverride : SlideShowHTML.getSlideSpeed()
+                    SlideShow.timeoutOverride != null ? SlideShow.timeoutOverride : SlideShowHTML.getSlideSpeed()
                 );
             }
         },
@@ -3637,7 +3637,7 @@ var Page;
                 case "":
                 case "/posts":
                 case "/pools/<number>":
-                    return $("article.post-preview", data).parent();
+                    return $("article.thumbnail", data).parent();
                 case "/pools":
                     return $("tr[id^=pool-]", data).parent();
                 default:

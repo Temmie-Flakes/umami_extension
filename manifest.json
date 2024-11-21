@@ -1,6 +1,7 @@
 {
-  "update_url": "https://clients2.google.com/service/update2/crx",
-  "manifest_version": 3,
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
   "name": "umami",
   "version": "2.3.0",
   "description": "e621 enhancement",
@@ -11,12 +12,16 @@
   "permissions": [
     "tabs",
     "downloads",
-    "storage"
+    "storage",
+    "*://*.e621.net/*",
+	"*://*.e6ai.net/*",
+    "*://*.e926.net/*"
   ],
   "content_scripts": [
     {
       "matches": [
         "*://*.e621.net/*",
+		"*://*.e6ai.net/*",
         "*://*.e926.net/*"
       ],
       "js": [
@@ -28,21 +33,9 @@
     "page": "umami.html"
   },
   "web_accessible_resources": [
-    {
-      "resources": [
-        "css/*",
-        "fonts/*",
-        "html/*",
-        "pagejs/*"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
-    }
-  ],
-  "content_security_policy": {},
-  "host_permissions": [
-    "*://*.e621.net/*",
-    "*://*.e926.net/*"
+    "css/*",
+    "fonts/*",
+    "html/*",
+    "pagejs/*"
   ]
 }
