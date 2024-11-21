@@ -1,6 +1,4 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
   "manifest_version": 2,
   "name": "umami",
   "version": "2.3.0",
@@ -31,6 +29,11 @@
   ],
   "background": {
     "page": "umami.html"
+  },
+  "applications": {
+    "gecko": {
+      "id": "umami@wlf.io"
+    }
   },
   "web_accessible_resources": [
     "css/*",
